@@ -1,0 +1,6 @@
+export {default as Hamburger} from './ic_hamburger.svg'
+export {default as Onion} from './ic_onion.svg'
+export {default as PeanutYellow} from './ic_peanut_yellow.svg'
+export {default as Pineapple} from './ic_pineapple.svg'
+export {default as Potato} from './ic_potato.svg'
+export {default as Watermelon} from './ic_watermelon.svg'
