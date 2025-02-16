@@ -3,9 +3,9 @@ import './components.css'
 
 const Header = () => {
   return (
-    <header className="header" class="bg-blue-500 text-white text-center flex flex-col justify-center items-center">
-      <h1 class="font-mauren font-bold text-xl">ALL  NATURAL DYES</h1>
-      <h2>FROM YOUR DAILY FOOD WASTE</h2>
+    <header className="header" class="flex flex-col justify-center py-8 px-10">
+      <h1 class="font-maurenTrial text-[112px] text-[#019785]">ALL  NATURAL DYES</h1>
+      <h2 class="font-focus">FROM YOUR DAILY FOOD WASTE</h2>
     </header>
   )
 }

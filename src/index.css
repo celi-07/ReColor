@@ -5,31 +5,31 @@
 @layer base {
     @font-face {
         font-family: 'Mauren';
-        src: url('/fonts/mauren.otf') format('opentype');
+        src: url('/src/fonts/maurenTrial.woff2') format('woff2');
         font-weight: normal;
         font-style: normal;
     }
     @font-face {
         font-family: 'Mauren-Thin';
-        src: url('/fonts/mauren-thin.otf') format('opentype');
+        src: url('/src/fonts/mauren-thin.otf') format('opentype');
         font-weight: normal;
         font-style: normal;
     }
     @font-face {
         font-family: 'Focus';
-        src: url('/fonts/FocusGrotesk-Regular.ttf') format('truetype');
+        src: url('/src/fonts/FocusGrotesk-Regular.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }
     @font-face {
         font-family: 'Focus-Italic';
-        src: url('/fonts/FocusGrotesk-Italic.ttf') format('truetype');
+        src: url('/src/fonts/FocusGrotesk-Italic.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }
     @font-face {
         font-family: 'Mogra';
-        src: url('/fonts/Mogra-Regular.ttf') format('truetype');
+        src: url('/src/fonts/Mogra-Regular.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }
