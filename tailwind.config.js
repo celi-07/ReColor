@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        mauren: ["Mauren"],
+        maurenTrial: ["Mauren"],
         maurenThin: ["Mauren-Thin"],
         focus: ["Focus"],
         focusItalic: ["Focus-Italic"],
