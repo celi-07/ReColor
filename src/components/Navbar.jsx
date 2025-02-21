@@ -1,9 +1,20 @@
 import { Link } from "react-router-dom"
 
-function Navbar() {
+function Navbar({
+  isHome = false,
+  onMouseEnter = () => {},
+  onMouseLeave = () => {},
+  className = '',
+  isColumn = false,
+}) {
   return (
-    <nav>
-      <Link to="/">Home</Link> | <Link to="/about">About</Link>
+    <nav className={`${className}`}>
+      {!isHome &&
+        <Link to="/" className={`${isColumn ? 'pb-1' : 'pr-[100px]'} text-turqoise font-focus text-[16px]`} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>Home</Link>
+      }
+      <Link to="/shop" className={`${isColumn ? 'pb-1' : 'pr-[100px]'} text-turqoise font-focus text-[16px]`} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>Shop</Link>
+      <Link to="/community" className={`${isColumn ? 'pb-1' : 'pr-[100px]'} text-turqoise font-focus text-[16px]`} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>Community</Link>
+      <Link to="/custom" className="text-turqoise font-focus text-[16px]" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>Custom</Link>
     </nav>
   )
 }
