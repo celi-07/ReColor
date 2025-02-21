@@ -13,6 +13,12 @@ export default {
         focusItalic: ["Focus-Italic"],
         Mogra: ["Mogra"],
       },
+      colors: {
+        turqoise: "#019785",
+        orange: "#FE8B3C",
+        blue: "#3673A2",
+        lightPink: "#FFE6E6",
+      },
     },
   },
   plugins: [],
