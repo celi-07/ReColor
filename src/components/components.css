@@ -1,4 +1,7 @@
 .header {
-    padding: 2rem;
-    width: 100%;
+    @apply w-[100%];
+}
+
+h1 span {
+    @apply px-0.5;
 }
