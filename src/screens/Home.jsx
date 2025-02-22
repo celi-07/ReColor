@@ -3,6 +3,7 @@ import WaterMelon from "../assets/icon/ic_watermelon.svg"
 import WaterMelonHovered from "../assets/icon/ic_watermelon_hovered.svg"
 import InteractiveButton from "../elements/InteractiveButton"
 import SectionHome1 from "../components/SectionHome1"
+import SectionHome2 from "../components/SectionHome2"
 
 function Home({ width }) {
   const handleImportance = () => {
@@ -54,6 +55,7 @@ function Home({ width }) {
         )}
       />
       <SectionHome1 width={width} />
+      <SectionHome2 width={width} />
     </div>
   )
 }
