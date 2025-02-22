@@ -1,28 +1,10 @@
-import { useNavigate } from "react-router-dom"
 import Header from "../components/Header"
 import WaterMelon from "../assets/icon/ic_watermelon.svg"
 import WaterMelonHovered from "../assets/icon/ic_watermelon_hovered.svg"
 import InteractiveButton from "../elements/InteractiveButton"
-import { useEffect, useState } from "react"
+import SectionHome1 from "../components/SectionHome1"
 
-function Home() {
-  const [width, setWidth] = useState(window.innerWidth)
-
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWidth(window.innerWidth)
-    }
-
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  const handleGoToProfile = () => {
-    navigate("/profile", { state: { name: "John Doe", age: 25 } })
-  }
-
+function Home({ width }) {
   const handleImportance = () => {
     console.log("Importance of Recolor")
   }
@@ -30,6 +12,7 @@ function Home() {
   return (
     <div className="bg-lightPink">
       <Header 
+        width={width}
         isHome={true}
         imgHover={WaterMelonHovered}
         imgNotHover={WaterMelon}
@@ -70,7 +53,7 @@ function Home() {
           />
         )}
       />
-      <button className="bg-slate-600 w-full" onClick={handleGoToProfile}>Go to John's Profile</button>
+      <SectionHome1 width={width} />
     </div>
   )
 }

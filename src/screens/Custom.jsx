@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Custom = () => {
+const Custom = ({ width }) => {
   return (
     <div>Custom</div>
   )
