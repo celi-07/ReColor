@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom"
 
-function Profile() {
+function Profile({ width }) {
     const location = useLocation()
     const { name, age } = location.state || {}
         

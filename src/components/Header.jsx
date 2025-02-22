@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './components.css'
-import Navbar from './Navbar'
+import Navbar from '../elements/Navbar'
 import ArrowDown from '../assets/icon/ic_arrow_down.svg'
 import HamburgerIconTurqoise from '../assets/icon/ic_hamburger_icon_turqoise.svg'
 
@@ -11,20 +11,11 @@ const Header = ({
   title = null,
   subtitle = null,
   text = '',
-  child = null
+  child = null,
+  width,
 }) => {
   const [isHovered, setIsHovered] = useState(false)
-  const [width, setWidth] = useState(window.innerWidth)
   const [openBurger, setOpenBurger] = useState(false)
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWidth(window.innerWidth)
-    }
-
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
 
   const handleArrowDown = () => {
     console.log("Arrow Down")

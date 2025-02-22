@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Community = () => {
+const Community = ({ width }) => {
   return (
     <div>Community</div>
   )
