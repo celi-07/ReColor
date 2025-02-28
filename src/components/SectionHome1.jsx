@@ -11,7 +11,7 @@ import Peanut from '../assets/icon/ic_peanut_yellow.svg'
 
 const SectionHome1 = ({ width }) => {
   return (
-    <div className={`flex flex-col p-16 bg-turqoise`}>
+    <div className={`flex flex-col p-16 bg-turqoise`} id='section1'>
         <div className={`flex items-start justify-between gap-10 mb-16 flex-wrap`}>
             <h1 className={`font-maurenTrial text-white text-[30px] flex-[4]`}>Natural dyes are environmentally friendly and non-toxic</h1>
             <p className={`font-focus text-white text-[16px] flex-[6] min-w-[300px]`}>Natural dyes from ReColor are all derived from food wastes, reducing reliance on synthetic chemicals that can harm ecosystems. Unlike synthetic dyes, which often contain toxic substances, natural dyes are biodegradable and less likely to contribute to water pollution. Additionally, the use of natural dyes promotes sustainable agricultural practices, supporting biodiversity and reducing the carbon footprint associated with conventional dye production.</p>
