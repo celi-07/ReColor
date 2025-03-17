@@ -5,6 +5,7 @@ import Community from "./screens/Community"
 import Custom from "./screens/Custom"
 import { useEffect, useState } from "react"
 import Checkout from "./screens/Checkout"
+import More from "./screens/More"
 
 function App() {
   const [width, setWidth] = useState(window.innerWidth)
@@ -26,6 +27,7 @@ function App() {
         <Route path="/community" element={<Community width={width} />} />
         <Route path="/custom" element={<Custom width={width} />} />
         <Route path='/checkout' element={<Checkout width={width} />} />
+        <Route path='/more' element={<More width={width} />} />
       </Routes>
     </Router>
   )
