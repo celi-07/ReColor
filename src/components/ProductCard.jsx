@@ -26,14 +26,14 @@ function ProductCard({ product, width }) {
         <InteractiveButton
                 handlePress={handleCheckout}
                 text='CHEKCOUT'
-                className={width < 650 ? 'w-[100px] outline outline-black bg-lightPink' : 'w-[150px] outline outline-lightPink bg-lightPink hover:bg-turqoise'}
+                className={width < 650 ? 'w-[100px] outline outline-black bg-lightPink' : 'w-[150px] bg-lightPink hover:bg-turqoise hover:outline-lightPink'}
                 textStyle={width < 650 ? 'text-[10px]' : width < 700 ? 'text-[12px]' : 'text-[16px] text-turqoise hover:text-lightPink'}
             />
 
         <InteractiveButton
                 handlePress={handleCheckout}
                 text='+'
-                className={width < 650 ? 'w-[30px] bg-turqoise' : 'w-[50px] bg-turqoise hover:bg-lightPink'}
+                className={width < 650 ? 'w-[30px] bg-turqoise outline outline-2 outline-black' : 'w-[50px] outline outline-2 outline-lightPink bg-turqoise hover:bg-lightPink'}
                 textStyle={width < 650 ? 'text-[10px]' : width < 700 ? 'text-[12px]' : 'text-[16px]'}
             />
         </div>

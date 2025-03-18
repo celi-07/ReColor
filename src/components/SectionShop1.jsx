@@ -89,8 +89,8 @@ const SectionShop1 = ({ width, handleColor = () => {} }) => {
             <InteractiveButton
                     handlePress={handleLoadMore}
                     text='Load More'
-                    className={width < 650 ? 'w-[100px] bg-turqoise' : 'w-[200px] bg-turqoise'}
-                    textStyle={width < 650 ? 'text-[10px]' : width < 700 ? 'text-[12px]' : 'text-[16px]'}
+                    className={width < 650 ? 'w-[100px] bg-lightPink' : 'w-[200px] bg-lightPink  hover:bg-turqoise hover:outline-lightPink'}
+                    textStyle={width < 650 ? 'text-[10px]' : width < 700 ? 'text-[12px]' : 'text-[16px] text-turqoise hover:text-lightPink'}
                 />
         </div>
         
