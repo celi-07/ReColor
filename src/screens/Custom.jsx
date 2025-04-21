@@ -65,6 +65,9 @@ const Custom = ({ width }) => {
         borderImg={CustomBorderOrange}
         handleCheckout={handleCheckout}
       />
+
+      {/* TODO: Create the body of the page */}
+
       <Footer 
         width={width} 
         isWavy={false}

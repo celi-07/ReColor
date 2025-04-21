@@ -5,8 +5,11 @@ import { useNavigate } from "react-router-dom";
 
 
 
-function ProductCard({ product, width }) {
+function ProductCard({ product, width, textColor = 'text-turqoise' }) {
     const navigate = useNavigate()
+
+    const [isHoverCheckout, setIsHoverCheckout] = React.useState(false)
+    const [isHoverAdd, setIsHoverAdd] = React.useState(false)
 
     const handleCheckout = () => {
         navigate('/checkout')
@@ -25,16 +28,24 @@ function ProductCard({ product, width }) {
       <div className="font-maurenTrial flex justify-center items-center gap-4 mt-4">
         <InteractiveButton
                 handlePress={handleCheckout}
-                text='CHEKCOUT'
-                className={width < 650 ? 'w-[100px] outline outline-black bg-lightPink' : 'w-[150px] bg-lightPink hover:bg-turqoise hover:outline-lightPink'}
-                textStyle={width < 650 ? 'text-[10px]' : width < 700 ? 'text-[12px]' : 'text-[16px] text-turqoise hover:text-lightPink'}
+                text='CHECKOUT'
+                className={`${width < 650 ? 'w-[100px] outline outline-black' : 'w-[150px]'} ${isHoverCheckout ? '' : 'bg-lightPink'}`}
+                outlineColor={'outline-lightPink'}
+                textStyle={`${width < 650 ? 'text-[10px]' : width < 700 ? 'text-[12px]' : 'text-[16px]'} ${isHoverCheckout ? 'text-lightPink' : textColor}`}
+                onMouseEnter={() => setIsHoverCheckout(true)}
+                onMouseLeave={() => setIsHoverCheckout(false)}
+                disableHover={true}
             />
 
         <InteractiveButton
                 handlePress={handleCheckout}
                 text='+'
-                className={width < 650 ? 'w-[30px] bg-turqoise outline outline-2 outline-black' : 'w-[50px] outline outline-2 outline-lightPink bg-turqoise hover:bg-lightPink'}
-                textStyle={width < 650 ? 'text-[10px]' : width < 700 ? 'text-[12px]' : 'text-[16px]'}
+                className={`${width < 650 ? 'w-[30px] outline outline-2' : 'w-[50px] outline outline-2 outline-lightPink'} ${isHoverAdd ? 'bg-lightPink' : ''}`}
+                outlineColor="outline-lightPink"
+                textStyle={`${width < 650 ? 'text-[10px]' : width < 700 ? 'text-[12px]' : 'text-[16px]'} ${isHoverAdd ? textColor : 'text-lightPink'}`}
+                onMouseEnter={() => setIsHoverAdd(true)}
+                onMouseLeave={() => setIsHoverAdd(false)}
+                disableHover={true}
             />
         </div>
     </div>

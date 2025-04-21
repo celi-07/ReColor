@@ -51,6 +51,8 @@ const products = [
 
 const SectionShop1 = ({ width, handleColor = () => {} }) => {
   const navigate = useNavigate()
+
+  const [isHoverLoadMore, setIsHoverLoadMore] = useState(false)
   
   const handleLoadMore = () => {
     navigate('/more')
@@ -86,12 +88,16 @@ const SectionShop1 = ({ width, handleColor = () => {} }) => {
         </div>
 
         <div className='flex justify-center items-center gap-4 mt-4'>
-            <InteractiveButton
-                    handlePress={handleLoadMore}
-                    text='Load More'
-                    className={width < 650 ? 'w-[100px] bg-lightPink' : 'w-[200px] bg-lightPink  hover:bg-turqoise hover:outline-lightPink'}
-                    textStyle={width < 650 ? 'text-[10px]' : width < 700 ? 'text-[12px]' : 'text-[16px] text-turqoise hover:text-lightPink'}
-                />
+          <InteractiveButton
+            handlePress={handleLoadMore}
+            text='Load More'
+            className={`${width < 650 ? 'w-[100px]' : 'w-[200px]'} ${isHoverLoadMore ? '' : 'bg-lightPink'}`}
+            outlineColor={'outline-lightPink'}
+            textStyle={`${width < 650 ? 'text-[10px]' : width < 700 ? 'text-[12px]' : 'text-[16px]'} ${isHoverLoadMore ? 'text-lightPink' : 'text-turqoise'}`}
+            onMouseEnter={() => setIsHoverLoadMore(true)}
+            onMouseLeave={() => setIsHoverLoadMore(false)}
+            disableHover={true}
+          />
         </div>
         
     </div>

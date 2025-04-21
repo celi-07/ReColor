@@ -75,7 +75,8 @@ const Shop = ({ width }) => {
             <InteractiveButton
               handlePress={handleSource}
               text='Source'
-              className={`${width < 650 ? 'w-[80px]' : 'w-[100px]'} outline-orange bg-orange hover:bg-lightPink`}
+              className={`${width < 650 ? 'w-[80px]' : 'w-[100px]'} bg-orange hover:bg-lightPink`}
+              outlineColor='outline-orange'
               textStyle={`${width < 650 ? 'text-[10px]' : width < 700 ? 'text-[12px]' : 'text-[16px]'} ${isHoverUsage ? 'text-orange' : 'text-white'}`}
               onMouseEnter={() => setIsHoverUsage(true)}
               onMouseLeave={() => setIsHoverUsage(false)}
@@ -83,7 +84,8 @@ const Shop = ({ width }) => {
             <InteractiveButton
               handlePress={handleUsage}
               text='Usage'
-              className={`${width < 650 ? 'w-[80px]' : 'w-[100px]'} outline-blue bg-blue hover:bg-lightPink`}
+              className={`${width < 650 ? 'w-[80px]' : 'w-[100px]'} bg-blue hover:bg-lightPink`}
+              outlineColor='outline-blue'
               textStyle={`${width < 650 ? 'text-[10px]' : width < 700 ? 'text-[12px]' : 'text-[16px]'} ${isHoverSource ? 'text-blue' : 'text-white'}`}
               onMouseEnter={() => setIsHoverSource(true)}
               onMouseLeave={() => setIsHoverSource(false)}
