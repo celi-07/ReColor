@@ -212,6 +212,7 @@ const SectionHome3 = ({ width, handleCheckout = () => {} }) => {
         hoverColor="text-turqoise"
         baseBgColor='bg-turqoise'
         hoverBgColor='bg-lightPink'
+        outlineColor = 'outline-turqoise'
         borderImg={CustomBorderTurqoise}
         handleCheckout={handleCheckout}
       />

@@ -136,6 +136,7 @@ const ColorScanner = ({
                             className={`${isHoveredA ? hoverBgColor : baseBgColor} ${outlineColor}`}
                             text={'Scan your color now'}
                             textStyle={`${isHoveredA ? hoverColor : baseColor} font-maurenTrial text-[16px]`}
+                            outlineColor={outlineColor}
                             onMouseEnter={() => setIsHoveredA(true)}
                             onMouseLeave={() => setIsHoveredA(false)}
                             handlePress={() => fileInputRef.current.click()}
@@ -146,6 +147,7 @@ const ColorScanner = ({
                             className={`${isHoveredB ? hoverBgColor : baseBgColor} ${outlineColor}`}
                             text={'insert colour hex code'}
                             textStyle={`${isHoveredB ? hoverColor : baseColor} font-maurenTrial text-[16px]`}
+                            outlineColor={outlineColor}
                             onMouseEnter={() => setIsHoveredB(true)}
                             onMouseLeave={() => setIsHoveredB(false)}
                             handlePress={() => setHexInput(true)}
