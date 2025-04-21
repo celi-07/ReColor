@@ -1,32 +1,48 @@
 import React, { useState } from 'react'
 import Header from '../components/Header'
+import SectionShop1 from '../components/SectionShop1'
+import SectionShop2 from '../components/SectionShop2'
+import SectionShop3 from '../components/SectionShop3'
 import Footer from '../components/Footer'
 
 import InteractiveButton from '../elements/InteractiveButton'
 import CoconutBrownHover from '../assets/icon/ic_coconut_brown.svg'
 import CoconutBrown from '../assets/icon/ic_coconut2.svg'
 
+
 const Shop = ({ width }) => {
   const [isHoverUsage, setIsHoverUsage] = useState(false)
   const [isHoverSource, setIsHoverSource] = useState(false)
 
   const handleColor = () => {
-    // TODO: Implement handleColor
+    const section = document.getElementById('color')
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' })
+    }
     console.log('color')
   }
 
   const handleUsage = () => {
-    // TODO: Implement handleUsage
+    const section = document.getElementById('usage')
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' })
+    }
     console.log('usage')
   }
 
   const handleSource = () => {
-    // TODO: Implement handleSource
+    const section = document.getElementById('source')
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' })
+    }
     console.log('source')
   }
 
   const handleArrowDown = () => {
-    // TODO: Implement handleArrowDown
+    const section = document.getElementById('color')
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' })
+    }
     console.log('arrow down')
   }
   
@@ -57,16 +73,16 @@ const Shop = ({ width }) => {
               textStyle={width < 650 ? 'text-[10px]' : width < 700 ? 'text-[12px]' : 'text-[16px]'}
             />
             <InteractiveButton
-              handlePress={handleUsage}
-              text='Usage'
+              handlePress={handleSource}
+              text='Source'
               className={`${width < 650 ? 'w-[80px]' : 'w-[100px]'} outline-orange bg-orange hover:bg-lightPink`}
               textStyle={`${width < 650 ? 'text-[10px]' : width < 700 ? 'text-[12px]' : 'text-[16px]'} ${isHoverUsage ? 'text-orange' : 'text-white'}`}
               onMouseEnter={() => setIsHoverUsage(true)}
               onMouseLeave={() => setIsHoverUsage(false)}
             />
             <InteractiveButton
-              handlePress={handleSource}
-              text='Source'
+              handlePress={handleUsage}
+              text='Usage'
               className={`${width < 650 ? 'w-[80px]' : 'w-[100px]'} outline-blue bg-blue hover:bg-lightPink`}
               textStyle={`${width < 650 ? 'text-[10px]' : width < 700 ? 'text-[12px]' : 'text-[16px]'} ${isHoverSource ? 'text-blue' : 'text-white'}`}
               onMouseEnter={() => setIsHoverSource(true)}
@@ -77,7 +93,9 @@ const Shop = ({ width }) => {
         handleArrowDown={handleArrowDown}
       />
 
-      {/* TODO: Create the body of the page */}
+      <SectionShop1 width={width} handleColor={handleColor}/>
+      <SectionShop2 width={width} />
+      <SectionShop3 width={width} />
 
       <Footer 
         width={width}

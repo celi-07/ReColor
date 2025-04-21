@@ -3,6 +3,7 @@ import Header from '../components/Header'
 
 import Potato from '../assets/icon/ic_potato.svg'
 import InteractiveButton from '../elements/InteractiveButton'
+import SectionCommunity1 from '../components/SectionCommunity1'
 import Footer from '../components/Footer'
 
 const Community = ({ width }) => {
@@ -42,7 +43,7 @@ const Community = ({ width }) => {
         lastWidth='w-[60px]'
       />
 
-      {/* TODO: Create the body of the page */}
+      <SectionCommunity1 width={width}/>
 
       <Footer width={width} />
     </div>
