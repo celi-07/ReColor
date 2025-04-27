@@ -22,7 +22,7 @@ const ScannerSection = ({
     const [isHovered, setIsHovered] = useState(false)
     
     return (
-        <div className={`flex ${width <= 1215 ? 'justify-center' : 'justify-between'} ${width < 500 ? 'px-8' : 'p-16'} flex-wrap ${bgColor}`}>
+        <div className={`flex ${width <= 1215 ? 'justify-center' : 'justify-between'} ${width < 500 ? 'px-8' : 'p-16'} flex-wrap ${bgColor}`} id='scannerSection'>
             <ColorScanner 
                 baseColor={baseColor}
                 hoverColor={hoverColor}

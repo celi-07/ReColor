@@ -9,54 +9,17 @@ import Alkannet from '../assets/icon/ic_alkannet_tinctoria.svg'
 import ProductCard from './ProductCard'
 import InteractiveButton from '../elements/InteractiveButton'
 import { useNavigate } from "react-router-dom"
-
-
-const products = [
-    {
-    name: "BUCKTHORN DYE",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    price: "Rp 50.000,00",
-    image: Rhamnus,
-    },
-    {
-      name: "CHAMOMILE DYE",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      price: "Rp 50.000,00",
-      image: Chamomile,
-    },
-    {
-      name: "SAPPANWOOD DYE",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      price: "Rp 50.000,00",
-      image: Sappanwood,
-    },
-    {
-      name: "COCHINEAL DYE",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      price: "Rp 50.000,00",
-      image: Cochineal,
-    },
-    {
-      name: "CHESNUT DYE",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      price: "Rp 50.000,00",
-      image: Chesnut,
-    },
-    {
-      name: "ALKANNET DYE",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      price: "Rp 50.000,00",
-      image: Alkannet,
-    },
-]
+import { DATA_PRODUCT } from '../constants/DATA_PRODUCT'
 
 const SectionShop3 = ({ width }) => {
   const navigate = useNavigate()
-    
-    const handleLoadMore = () => {
-      navigate('/more')
-      console.log('load more')
-    }
+  
+  const [isHoverLoadMore, setIsHoverLoadMore] = useState(false)
+
+  const handleLoadMore = () => {
+    navigate('/more')
+    console.log('load more')
+  }
 
   return (
     <div className={`flex flex-col p-16 bg-blue`} id='usage'>
@@ -78,18 +41,22 @@ const SectionShop3 = ({ width }) => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4 text-center flex-grow">
-            {products.map((product, index) => (
-                <ProductCard key={index} product={product} />
+            {DATA_PRODUCT.map((product, index) => (
+                <ProductCard key={index} product={product} textColor='text-blue' />
             ))}
             </div>
         </div>
         
         <div className='flex justify-center items-center gap-4 mt-4'>
             <InteractiveButton
-                    handlePress={handleLoadMore}
-                    text='Load More'
-                    className={width < 650 ? 'w-[100px] bg-turqoise' : 'w-[200px] bg-turqoise'}
-                    textStyle={width < 650 ? 'text-[10px]' : width < 700 ? 'text-[12px]' : 'text-[16px]'}
+              handlePress={handleLoadMore}
+              text='Load More'
+              className={`${width < 650 ? 'w-[100px]' : 'w-[200px]'} ${isHoverLoadMore ? '' : 'bg-lightPink'}`}
+              outlineColor={'outline-lightPink'}
+              textStyle={`${width < 650 ? 'text-[10px]' : width < 700 ? 'text-[12px]' : 'text-[16px]'} ${isHoverLoadMore ? 'text-lightPink' : 'text-blue'}`}
+              onMouseEnter={() => setIsHoverLoadMore(true)}
+              onMouseLeave={() => setIsHoverLoadMore(false)}
+              disableHover={true}
             />
         </div>
         

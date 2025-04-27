@@ -1,64 +1,15 @@
 import React from 'react'
 
-import Rhamnus from '../assets/icon/ic_rhamnus_saxatilis.svg'
-import Chamomile from '../assets/icon/ic_anthemis_tinctoria.svg'
-import Sappanwood from '../assets/icon/ic_caesalpinia_sappan.svg'
-import Cochineal from '../assets/icon/ic_dactylopius_coccus.svg'
-import Chesnut from '../assets/icon/ic_castanea_sativa.svg'
-import Alkannet from '../assets/icon/ic_alkannet_tinctoria.svg'
-import Cutch from '../assets/icon/ic_acacia_catechu.svg'
-
 import ShoppingBag from '../assets/icon/ic_shopping_bag.svg'
 import User from '../assets/icon/ic_user.svg'
 
 import ProductCard from '../components/ProductCard'
-
-const products = [
-    {
-    name: "BUCKTHORN DYE",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    price: "Rp 50.000,00",
-    image: Rhamnus,
-    },
-    {
-      name: "CHAMOMILE DYE",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      price: "Rp 50.000,00",
-      image: Chamomile,
-    },
-    {
-      name: "SAPPANWOOD DYE",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      price: "Rp 50.000,00",
-      image: Sappanwood,
-    },
-    {
-      name: "COCHINEAL DYE",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      price: "Rp 50.000,00",
-      image: Cochineal,
-    },
-    {
-      name: "CHESNUT DYE",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      price: "Rp 50.000,00",
-      image: Chesnut,
-    },
-    {
-      name: "ALKANNET DYE",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      price: "Rp 50.000,00",
-      image: Alkannet,
-    },
-    {
-     name: "CUTCH EXTRACT DYE",
-     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-     price: "Rp 50.000,00",
-     image: Cutch,
-    }
-]
+import { DATA_PRODUCT_MORE } from '../constants/DATA_PRODUCT'
+import { useNavigate } from 'react-router-dom'
 
 const More = ({ width }) => {
+    const navigate = useNavigate()
+
     const handleBack = () => {
         window.history.back()
     }
@@ -71,8 +22,8 @@ const More = ({ width }) => {
                 </div>
 
                 <div className={`flex ${width < 600 ? 'flex-row justify-center' : 'flex-row'} gap-4 mt-12 mb-16`}>
-                    <img src={ShoppingBag} alt="" className={`w-8 h-8`}/>
-                    <img src={User} alt="" className={`w-8 h-8`}/>
+                    <button onClick={() => navigate('/checkout')}><img src={ShoppingBag} alt="" className={`w-8 h-8`}/></button>
+                    {/* <img src={User} alt="" className={`w-8 h-8`}/> */}
                 </div>
 
             </div>
@@ -97,7 +48,7 @@ const More = ({ width }) => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4 text-center flex-grow">
-                    {products.map((product, index) => (
+                    {DATA_PRODUCT_MORE.map((product, index) => (
                         <ProductCard key={index} product={product} />
                     ))}
                 </div>

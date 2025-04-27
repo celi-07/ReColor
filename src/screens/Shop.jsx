@@ -8,11 +8,15 @@ import Footer from '../components/Footer'
 import InteractiveButton from '../elements/InteractiveButton'
 import CoconutBrownHover from '../assets/icon/ic_coconut_brown.svg'
 import CoconutBrown from '../assets/icon/ic_coconut2.svg'
+import { useNavigate } from 'react-router-dom'
 
 
 const Shop = ({ width }) => {
   const [isHoverUsage, setIsHoverUsage] = useState(false)
   const [isHoverSource, setIsHoverSource] = useState(false)
+  const [showItemAdded, setShowItemAdded] = useState(false)
+
+  const navigate = useNavigate()
 
   const handleColor = () => {
     const section = document.getElementById('color')
@@ -75,7 +79,8 @@ const Shop = ({ width }) => {
             <InteractiveButton
               handlePress={handleSource}
               text='Source'
-              className={`${width < 650 ? 'w-[80px]' : 'w-[100px]'} outline-orange bg-orange hover:bg-lightPink`}
+              className={`${width < 650 ? 'w-[80px]' : 'w-[100px]'} bg-orange hover:bg-lightPink`}
+              outlineColor='outline-orange'
               textStyle={`${width < 650 ? 'text-[10px]' : width < 700 ? 'text-[12px]' : 'text-[16px]'} ${isHoverUsage ? 'text-orange' : 'text-white'}`}
               onMouseEnter={() => setIsHoverUsage(true)}
               onMouseLeave={() => setIsHoverUsage(false)}
@@ -83,7 +88,8 @@ const Shop = ({ width }) => {
             <InteractiveButton
               handlePress={handleUsage}
               text='Usage'
-              className={`${width < 650 ? 'w-[80px]' : 'w-[100px]'} outline-blue bg-blue hover:bg-lightPink`}
+              className={`${width < 650 ? 'w-[80px]' : 'w-[100px]'} bg-blue hover:bg-lightPink`}
+              outlineColor='outline-blue'
               textStyle={`${width < 650 ? 'text-[10px]' : width < 700 ? 'text-[12px]' : 'text-[16px]'} ${isHoverSource ? 'text-blue' : 'text-white'}`}
               onMouseEnter={() => setIsHoverSource(true)}
               onMouseLeave={() => setIsHoverSource(false)}
@@ -93,9 +99,16 @@ const Shop = ({ width }) => {
         handleArrowDown={handleArrowDown}
       />
 
-      <SectionShop1 width={width} handleColor={handleColor}/>
-      <SectionShop2 width={width} />
-      <SectionShop3 width={width} />
+      <SectionShop1 width={width} handleColor={handleColor} setShowItemAdded={setShowItemAdded} />
+      <SectionShop2 width={width} setShowItemAdded={setShowItemAdded} />
+      <SectionShop3 width={width} setShowItemAdded={setShowItemAdded} />
+      
+      {showItemAdded && (
+        <div className='animate-floatUp bg-turqoise p-4 rounded-lg shadow-2xl fixed bottom-6 right-6 flex flex-col justify-end items-end'>
+          <p className='font-maurenTrial text-white mb-2'>Item added successfully!</p>
+          <button className='text-white text-[12px] font-maurenTrial underline' onClick={() => navigate('/checkout')}>Go to Checkout Page</button>
+        </div>
+      )}
 
       <Footer 
         width={width}

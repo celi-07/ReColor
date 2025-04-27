@@ -212,6 +212,7 @@ const SectionHome3 = ({ width, handleCheckout = () => {} }) => {
         hoverColor="text-turqoise"
         baseBgColor='bg-turqoise'
         hoverBgColor='bg-lightPink'
+        outlineColor = 'outline-turqoise'
         borderImg={CustomBorderTurqoise}
         handleCheckout={handleCheckout}
       />
@@ -227,17 +228,17 @@ const SectionHome3 = ({ width, handleCheckout = () => {} }) => {
           style={modelStyle}
         >
           {/* Action Button  */}
-          <div className="flex items-end w-[300px]">
-            <div onClick={handlePrev}>
-              <img src={ArrowDown} alt="Prev" className="w-6 h-6 rotate-90" />
-            </div>
-            <div>
-            <h2 className="font-maurenTrial text-turqoise text-[24px] text-center">{arr[i].name}</h2>
-              <p className={`font-focus text-turqoise text-[16px] text-center`}>{arr[i].description}</p>
+          <div className='w-[300px]'>
+            <h2 className="font-maurenTrial text-turqoise text-[28px] text-center">{arr[i].name}</h2>
+            <p className={`font-focus text-turqoise text-[16px] text-center pb-4`}>{arr[i].description}</p>
+            <div className="flex items-center justify-between w-full">
+              <div onClick={handlePrev} className='h-full'>
+                <img src={ArrowDown} alt="Prev" className="w-4 h-4 rotate-90" />
+              </div>
               <p className={`font-focusItalic text-turqoise text-[16px] text-center`}>Price: {arr[i].price}</p>
-            </div>
-            <div onClick={handleNext}>
-              <img src={ArrowDown} alt="Next" className="w-6 h-6 -rotate-90" />
+              <div onClick={handleNext} className='h-full'>
+                <img src={ArrowDown} alt="Next" className="w-4 h-4 -rotate-90" />
+              </div>
             </div>
           </div>
 
