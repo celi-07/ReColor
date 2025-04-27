@@ -10,7 +10,7 @@ export const DATA_PRODUCT = [
     {
         id: "buckthornDye",
         name: "BUCKTHORN DYE",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Natural yellow dye extracted from buckthorn berries.",
         priceInt: 50000,
         price: "Rp 50.000,00",
         image: Rhamnus,
@@ -19,7 +19,7 @@ export const DATA_PRODUCT = [
     {
         id: "chamomileDye",
         name: "CHAMOMILE DYE",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Soft golden hues from the beautiful chamomile flower.",
         priceInt: 50000,
         price: "Rp 50.000,00",
         image: Chamomile,
@@ -28,7 +28,7 @@ export const DATA_PRODUCT = [
     {
         id: "sappanwoodDye",
         name: "SAPPANWOOD DYE",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Rich red tones sourced from sappanwood heartwood.",
         priceInt: 50000,
         price: "Rp 50.000,00",
         image: Sappanwood,
@@ -37,7 +37,7 @@ export const DATA_PRODUCT = [
     {
         id: "cochinealDye",
         name: "COCHINEAL DYE",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Vibrant crimson dye derived from cochineal insects.",
         priceInt: 50000,
         price: "Rp 50.000,00",
         image: Cochineal,
@@ -46,7 +46,7 @@ export const DATA_PRODUCT = [
     {
         id: "chesnutDye",
         name: "CHESNUT DYE",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Warm brown shades extracted from chestnut shells.",
         priceInt: 50000,
         price: "Rp 50.000,00",
         image: Chesnut,
@@ -55,7 +55,7 @@ export const DATA_PRODUCT = [
     {
         id: "alkannetDye",
         name: "ALKANNET DYE",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Deep blue-purple color from alkannet root pigment.",
         priceInt: 50000,
         price: "Rp 50.000,00",
         image: Alkannet,
@@ -67,7 +67,7 @@ export const DATA_PRODUCT_MORE = [
     {
         id: "buckthornDye",
         name: "BUCKTHORN DYE",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Natural yellow dye extracted from buckthorn berries.",
         priceInt: 50000,
         price: "Rp 50.000,00",
         image: Rhamnus,
@@ -76,7 +76,7 @@ export const DATA_PRODUCT_MORE = [
     {
         id: "chamomileDye",
         name: "CHAMOMILE DYE",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Soft golden hues from the beautiful chamomile flower.",
         priceInt: 50000,
         price: "Rp 50.000,00",
         image: Chamomile,
@@ -85,7 +85,7 @@ export const DATA_PRODUCT_MORE = [
     {
         id: "sappanwoodDye",
         name: "SAPPANWOOD DYE",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Rich red tones sourced from sappanwood heartwood.",
         priceInt: 50000,
         price: "Rp 50.000,00",
         image: Sappanwood,
@@ -94,7 +94,7 @@ export const DATA_PRODUCT_MORE = [
     {
         id: "cochinealDye",
         name: "COCHINEAL DYE",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Vibrant crimson dye derived from cochineal insects.",
         priceInt: 50000,
         price: "Rp 50.000,00",
         image: Cochineal,
@@ -103,7 +103,7 @@ export const DATA_PRODUCT_MORE = [
     {
         id: "chesnutDye",
         name: "CHESNUT DYE",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Warm brown shades extracted from chestnut shells.",
         priceInt: 50000,
         price: "Rp 50.000,00",
         image: Chesnut,
@@ -112,16 +112,16 @@ export const DATA_PRODUCT_MORE = [
     {
         id: "alkannetDye",
         name: "ALKANNET DYE",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        price: 50000,
-        priceInt: "Rp 50.000,00",
+        description: "Deep blue-purple color from alkannet root pigment.",
+        priceInt: 50000,
+        price: "Rp 50.000,00",
         image: Alkannet,
         checked: false,
     },
     {
         id: "cutchDye",
         name: "CUTCH EXTRACT DYE",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "Earthy brown dye obtained from the heartwood of cutch trees.",
         priceInt: 50000,
         price: "Rp 50.000,00",
         image: Cutch,
