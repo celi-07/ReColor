@@ -1,54 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import Rhamnus from '../assets/icon/ic_rhamnus_saxatilis.svg'
-import Chamomile from '../assets/icon/ic_anthemis_tinctoria.svg'
-import Sappanwood from '../assets/icon/ic_caesalpinia_sappan.svg'
-import Cochineal from '../assets/icon/ic_dactylopius_coccus.svg'
-import Chesnut from '../assets/icon/ic_castanea_sativa.svg'
-import Alkannet from '../assets/icon/ic_alkannet_tinctoria.svg'
 
 import ProductCard from './ProductCard'
 import InteractiveButton from '../elements/InteractiveButton'
 import { useNavigate } from "react-router-dom"
-
-
-const products = [
-    {
-    name: "BUCKTHORN DYE",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    price: "Rp 50.000,00",
-    image: Rhamnus,
-    },
-    {
-      name: "CHAMOMILE DYE",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      price: "Rp 50.000,00",
-      image: Chamomile,
-    },
-    {
-      name: "SAPPANWOOD DYE",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      price: "Rp 50.000,00",
-      image: Sappanwood,
-    },
-    {
-      name: "COCHINEAL DYE",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      price: "Rp 50.000,00",
-      image: Cochineal,
-    },
-    {
-      name: "CHESNUT DYE",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      price: "Rp 50.000,00",
-      image: Chesnut,
-    },
-    {
-      name: "ALKANNET DYE",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      price: "Rp 50.000,00",
-      image: Alkannet,
-    },
-]
+import { DATA_PRODUCT } from '../constants/DATA_PRODUCT'
 
 const SectionShop2 = ({ width }) => {
   const navigate = useNavigate()
@@ -79,7 +34,7 @@ const SectionShop2 = ({ width }) => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4 text-center flex-grow">
-            {products.map((product, index) => (
+            {DATA_PRODUCT.map((product, index) => (
                 <ProductCard key={index} product={product} textColor='text-orange' />
             ))}
             </div>

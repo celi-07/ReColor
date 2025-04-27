@@ -5,11 +5,21 @@ import Potato from '../assets/icon/ic_potato.svg'
 import InteractiveButton from '../elements/InteractiveButton'
 import SectionCommunity1 from '../components/SectionCommunity1'
 import Footer from '../components/Footer'
+import SectionCommunity2 from '../components/SectionCommunity2'
 
 const Community = ({ width }) => {
   const handleProgress = () => {
-    // TODO: Implement handleProgress
-    console.log('progress')
+    const section = document.getElementById("section1")
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
+  const handleArrowDown = () => {
+    const section = document.getElementById("section1")
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" })
+    }
   }
 
   return (
@@ -41,9 +51,11 @@ const Community = ({ width }) => {
         firstWidth='w-[150px]'
         secondWidth='w-[70px]'
         lastWidth='w-[60px]'
+        handleArrowDown={handleArrowDown}
       />
 
       <SectionCommunity1 width={width}/>
+      <SectionCommunity2 width={width}/>
 
       <Footer width={width} />
     </div>
