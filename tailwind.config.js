@@ -19,6 +19,15 @@ export default {
         blue: "#3673A2",
         lightPink: "#FFE6E6",
       },
+      keyframes: {
+        floatUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        }
+      },
+      animation: {
+        floatUp: 'floatUp 0.6s ease-out',
+      }
     },
   },
   plugins: [],

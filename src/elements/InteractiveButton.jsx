@@ -4,6 +4,7 @@ const InteractiveButton = ({
     handlePress = () => {},
     onMouseEnter = () => {},
     onMouseLeave = () => {},
+    outlineColor = 'outline-turqoise',
     disableHover = false,
     disabled = false,
     className = '',
@@ -14,9 +15,10 @@ const InteractiveButton = ({
         <button 
             className=
                 {`
-                    font-maurenTrial p-2 rounded-tl-2xl rounded-br-2xl outline outline-2 outline-turqoise text-white bg-turqoise transition duration-300 
+                    font-maurenTrial p-2 rounded-tl-2xl rounded-br-2xl outline outline-2 text-white transition duration-300 
                     ${className} 
-                    ${disableHover ? 'no-hover' : 'hover:text-turqoise hover:bg-white'}
+                    ${outlineColor}
+                    ${disableHover ? 'no-hover' : 'hover:text-turqoise hover:bg-lightPink'}
                 `}
             onClick={handlePress}
             onMouseEnter={onMouseEnter}

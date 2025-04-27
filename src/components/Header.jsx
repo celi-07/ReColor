@@ -13,18 +13,18 @@ const Header = ({
   text = '',
   child = null,
   width,
+  firstWidth = 'w-[200px]',
+  secondWidth = 'w-[100px]',
+  lastWidth = 'w-[80px]',
+  handleArrowDown = () => {}
 }) => {
   const [isHovered, setIsHovered] = useState(false)
   const [openBurger, setOpenBurger] = useState(false)
 
-  const handleArrowDown = () => {
-    console.log("Arrow Down")
-  }
-
   return (
     <header className=
       {`
-        header flex flex-col justify-between pb-4 pt-8 relative
+        header flex flex-col justify-between pb-4 pt-8 relative bg-lightPink
         ${width < 500 ? 'px-8' : 'px-16 h-[630px]'}
       `}
     >
@@ -37,20 +37,14 @@ const Header = ({
         <div>
           <div>
             <div className='flex justify-between items-center'>
-              <h1 className=
-                {`
-                  font-maurenTrial text-turqoise
-                  ${width < 500 ? 'text-[20px]' : width < 700 ? 'text-[40px]' : width < 768 ? 'text-[56px]' : width < 1150 ? 'text-[64px]' : width < 1300 ? 'text-[80px]' : 'text-[112px]'}
-                `}
-              >
-                {title}
-              </h1>
+              {title}
               {width < 700 && 
                 <button onClick={() => setOpenBurger(!openBurger)} className='relative'>
                   <img src={HamburgerIconTurqoise} alt="Hamburger Icon" className={width < 500 ? 'w-6 h-6' : `w-8 h-8`} />
                   {openBurger && (
                     <div className='absolute top-5 right-0 bg-lightPink p-4 rounded-lg shadow-white shadow-md'>
                       <Navbar 
+                        width={width}
                         isHome={true}
                         isColumn={true}
                         onMouseEnter={() => setIsHovered(true)}
@@ -86,6 +80,7 @@ const Header = ({
       {width > 700 && (
         <div className='flex justify-between items-center'>
           <Navbar 
+            width={width}
             isHome={isHome}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)} 
@@ -96,19 +91,19 @@ const Header = ({
         </div>
       )}
       
-      <img src={imgHover} alt="Watermelon" 
+      <img src={imgHover} alt="Image" 
         className=
         {`
           absolute top-[32%] right-[8%]
-          ${width < 400 ? 'w-[80px] top-[75%] right-[5%]' : width < 500 ? 'w-[100px] top-[70%] right-[5%]' : width < 700 ? 'w-[200px] top-[420px] right-[5%]' : width < 900 ? 'w-[200px] top-[420px] right-[90px]' : 'top-[32%] right-[8%] '}
+          ${width < 400 ? `${lastWidth} top-[75%] right-[5%]` : width < 500 ? `${secondWidth} top-[70%] right-[5%]` : width < 700 ? `${firstWidth} top-[420px] right-[5%]` : width < 900 ? `${firstWidth} top-[420px] right-[90px]` : 'top-[32%] right-[8%] '}
           ${isHovered ? 'opacity-100' : 'opacity-0'} transition duration-500
         `} 
       />
-      <img src={imgNotHover} alt="Watermelon" 
+      <img src={imgNotHover} alt="Image Hover" 
         className=
         {`
           absolute
-          ${width < 400 ? 'w-[80px] top-[75%] right-[5%]' : width < 500 ? 'w-[100px] top-[70%] right-[5%]' : width < 700 ? 'w-[200px] top-[420px] right-[5%]' : width < 900 ? 'w-[200px] top-[420px] right-[90px]' : 'top-[32%] right-[8%] '}
+          ${width < 400 ? `${lastWidth} top-[75%] right-[5%]` : width < 500 ? `${secondWidth} top-[70%] right-[5%]` : width < 700 ? `${firstWidth} top-[420px] right-[5%]` : width < 900 ? `${firstWidth} top-[420px] right-[90px]` : 'top-[32%] right-[8%] '}
           ${isHovered ? 'opacity-0' : 'opacity-100'} transition duration-500
         `} 
       />
