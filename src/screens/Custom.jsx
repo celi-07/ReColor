@@ -34,13 +34,15 @@ const Custom = ({ width }) => {
   const navigate = useNavigate()
 
   const handleCustomNow = () => {
-    // TODO: Implement handleCustomNow
-    console.log('custom now')
+    const section = document.getElementById("scannerSection")
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" })
+    }
   }
 
   const handleCheckout = () => {
-    // TODO: Implement handleCheckout
     navigate('/checkout')
+    window.scrollTo(0, 0)
   }
 
   const handleStart = () => {
