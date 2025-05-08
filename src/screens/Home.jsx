@@ -28,9 +28,9 @@ const Home = ({ width }) => {
   }
 
   const handleLearnHow = () => {
-    const section = document.getElementById('generateHomeSection')
+    const section = document.getElementById("section3")
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' })
+      section.scrollIntoView({ behavior: "smooth" })
     }
   }
 

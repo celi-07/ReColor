@@ -16,6 +16,7 @@ const SectionHome4 = ({ width }) => {
 
     const handleJoinNow = () => {
         navigate('/community')
+        window.scrollTo(0, 0)
     }
 
     return (

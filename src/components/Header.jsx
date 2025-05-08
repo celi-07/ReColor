@@ -78,14 +78,14 @@ const Header = ({
       </div>
 
       {width > 700 && (
-        <div className='flex justify-between items-center'>
+        <div className={`flex justify-between items-center -ml-[50px]`}>
           <Navbar 
             width={width}
             isHome={isHome}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)} 
+            // onMouseEnter={() => setIsHovered(true)}
+            // onMouseLeave={() => setIsHovered(false)} 
           />
-          <button onClick={() => handleArrowDown()}>
+          <button onClick={() => handleArrowDown()} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
             <img src={ArrowDown} alt="Arrow Down" className='w-8 h-8' />
           </button>
         </div>

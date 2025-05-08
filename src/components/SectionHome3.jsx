@@ -187,7 +187,7 @@ const SectionHome3 = ({ width, handleCheckout = () => {} }) => {
   }
 
   return (
-    <div className={`overflow-hidden bg-lightPink`} id='generateHomeSection'>
+    <div className={`overflow-hidden bg-lightPink`} id="section3">
       <div className={`flex ${width < 1180 ? 'justify-center' : 'justify-between'} flex-wrap px-16 py-12`}>
         <NumberData
           numberString="1"
