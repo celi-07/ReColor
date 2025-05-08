@@ -11,6 +11,7 @@ const SectionHome5 = ({ width }) => {
 
     const handleLearnHow = () => {
         navigate('/community')
+        window.scrollTo(0, 0)
     }
 
     return (

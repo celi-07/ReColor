@@ -34,13 +34,15 @@ const Custom = ({ width }) => {
   const navigate = useNavigate()
 
   const handleCustomNow = () => {
-    // TODO: Implement handleCustomNow
-    console.log('custom now')
+    const section = document.getElementById("scannerSection")
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" })
+    }
   }
 
   const handleCheckout = () => {
-    // TODO: Implement handleCheckout
     navigate('/checkout')
+    window.scrollTo(0, 0)
   }
 
   const handleStart = () => {
@@ -115,6 +117,23 @@ const Custom = ({ width }) => {
               <button className="text-orange text-xs">READ MORE</button>
             </div>
           ))}
+        </div>
+
+        <div className="min-w-full w-full flex-shrink-0 snap-center flex flex-col items-center justify-center px-4">
+          <h3 className="text-2xl font-maurenTrial mb-6">WATCH HOW OUR DYES ARE MADE</h3>
+          <div className="relative w-full max-w-2xl aspect-video bg-black rounded-lg overflow-hidden">
+            <iframe 
+              className="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/DruxmN_16rM" 
+              title="Dye Making Process"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+            ></iframe>
+          </div>
+          <p className="text-sm font-focus max-w-lg text-center mt-6">
+            Our artisans follow traditional techniques passed down through generations, 
+            ensuring every dye is crafted with care and respect for ancient knowledge. <br /> Link: <u><a href='https://www.youtube.com/embed/DruxmN_16rM'>https://www.youtube.com/embed/DruxmN_16rM</a></u>
+          </p>
         </div>
 
         {width >= 950 && (

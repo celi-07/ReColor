@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { CheckoutContext } from '../context/CheckoutContext'
 import { DATA_BANK_TRANSFER, DATA_EWALLET } from '../constants/DATA_PAYMENT.jsx'
+import ChaChing from '../assets/sound/ChaChing.mp3'
 import PopUpCheckout from '../components/PopUpCheckout.jsx'
 
 const CheckoutPage = ({ width }) => {
@@ -22,11 +23,15 @@ const CheckoutPage = ({ width }) => {
   const voucher = selectedProducts.length > 0 ? -10000.00 : 0
   const total = subtotal + shipping + insurance + voucher - (usePoints ? 23480 : 0)
 
+  const audio = new Audio(ChaChing)
+
   const handleCheckout = () => {
     setPopupStatus('loading')
     
     setTimeout(() => {
       setPopupStatus('success')
+      audio.currentTime = 0
+      audio.play().catch(() => {})
     }, 2000)
   }
 
