@@ -1,10 +1,17 @@
-import React from "react"
+import React,  { useState } from 'react'
 import Potato from "../assets/icon/ic_potato.svg"
 import WaterMelon from "../assets/icon/ic_watermelon.svg"
 import CoconutBrown from '../assets/icon/ic_coconut2.svg'
 import InteractiveButton from "../elements/InteractiveButton"
 
 const SectionCommunity1 = ({ width }) => {
+    const [isHoverBtn, setIsHoverBtn] = useState(false)
+    const [isPopupOpen, setIsPopupOpen] = useState(false); // State to manage popup visibility
+    const [newServerName, setNewServerName] = useState(""); // State to manage new server name
+
+    /// State to manage chat input
+    const [chatInput, setChatInput] = useState("");
+
     // Sample data for points records
     const pointsRecords = [
         { points: "+31", date: "Sep 19" },
@@ -13,15 +20,15 @@ const SectionCommunity1 = ({ width }) => {
     ]
 
     // Sample data for server list
-    const servers = [
+    const [servers ,setServers] = useState([
         { name: "DYE.IO", participants: "12 participants online" },
         { name: "DYERBROS", participants: "9 participants online" },
         { name: "MR CREATIVE", participants: "12 participants online" },
         { name: "COLORING", participants: "27 participants online" },
-    ]
+    ]);
 
     // Sample data for chat messages
-    const chatMessages = [
+    const [chatMessages, setChatMessages] = useState([
         { 
             avatar: WaterMelon, 
             message: "Whoa! Just tried out the custom dye tool on ReColor — it's so satisfying seeing the color change in real time! 🔥"
@@ -34,7 +41,29 @@ const SectionCommunity1 = ({ width }) => {
             avatar: WaterMelon, 
             message: "Haha I went the opposite — pastel dream. Lavender with soft sky blue. Super smooth interface too 🌈✨"
         },
-    ]
+    ]);
+
+
+    // START: Added handlers for buttons and chat
+    const handleCreateServer = () => {
+        setIsPopupOpen(true); // Open the popup
+    };
+
+    const handleAddServer = () => {
+        if (newServerName.trim() !== "") {
+            setServers([...servers, { name: newServerName, participants: "1 participants online" }]);
+            setNewServerName(""); // Clear input after adding
+            setIsPopupOpen(false); // Close the popup after adding
+        }
+        
+    };
+
+    const handleSendChatMessage = () => {
+        if (chatInput.trim() !== "") {
+            setChatMessages([...chatMessages, { avatar: Potato, message: chatInput }]);
+            setChatInput(""); // Clear input after sending
+        }
+    };
 
     return (
         <div className='flex flex-col bg-blue text-white py-10 px-5 md:px-16' id='section1'>
@@ -195,12 +224,14 @@ const SectionCommunity1 = ({ width }) => {
                     <div className='flex items-center gap-8 mb-4 justify-between'>
                         <h2 className='text-xl font-bold'>SERVERS</h2>
                         <InteractiveButton 
-                            text="CREATE SERVER"
-                            className="bg-white"
-                            outlineColor="outline-white"
-                            textStyle="text-sm text-blue"
+                            className={`${isHoverBtn ? 'bg-blue-dark' : 'bg-white'}`}
+                            outlineColor="outline-lightPink"
+                            text='Create Server'
+                            textStyle={`${isHoverBtn ? 'text-white' : 'text-blue'} font-maurenTrial text-[16px]`}
+                            handlePress={handleCreateServer} // Added handler for creating server
+                            onMouseEnter={() => setIsHoverBtn(true)}
+                            onMouseLeave={() => setIsHoverBtn(false)}
                             disableHover={true}
-                            disabled={true}
                         />
                     </div>
                     
@@ -238,11 +269,12 @@ const SectionCommunity1 = ({ width }) => {
                         <div className='flex-1 border-white border-2 rounded-tl-2xl rounded-br-2xl p-2 flex items-center'>
                             <input 
                                 type="text" 
-                                placeholder="Type..." 
+                                placeholder="Type..."
+                                value={chatInput} // Added value
+                                onChange={(e) => setChatInput(e.target.value)} // Added onChange 
                                 className='flex-1 pl-2 text-white outline-none bg-transparent font-focusGrotesk'
-                                disabled={true}
                             />
-                            <button className='text-white'>
+                            <button className='text-white' onClick={handleSendChatMessage}> {/* Added onClick */}
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15 8L1 15V1L15 8Z" />
                                 </svg>
@@ -251,6 +283,36 @@ const SectionCommunity1 = ({ width }) => {
                     </div>
                 </div>
             </div>
+
+            {/* Popup for creating a new server */}
+            {isPopupOpen && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                    <div className="bg-white rounded-3xl p-8 max-w-md w-full mx-4">
+                        <h3 className="text-xl font-bold text-blue mb-4">Create New Server</h3>
+                        <input 
+                            type="text" 
+                            placeholder="Enter server name"
+                            value={newServerName}
+                            onChange={(e) => setNewServerName(e.target.value)}
+                            className="w-full p-3 border border-blue rounded-md mb-4 text-black"
+                        />
+                        <div className="flex justify-end gap-4">
+                            <button 
+                                onClick={() => setIsPopupOpen(false)} 
+                                className="bg-gray-300 text-blue px-4 py-2 rounded-md"
+                            >
+                                Cancel
+                            </button>
+                            <button 
+                                onClick={handleAddServer} 
+                                className="bg-blue text-white px-4 py-2 rounded-md"
+                            >
+                                Add Server
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
