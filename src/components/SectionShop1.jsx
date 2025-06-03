@@ -19,7 +19,7 @@ const SectionShop1 = ({ width, setShowItemAdded = () => {} }) => {
     <div className={`flex flex-col p-16 bg-turqoise`} id='color'>
         <div className={`flex items-start justify-between gap-10 mb-5 flex-wrap`}>
             <h1 className={`font-maurenTrial text-white text-[30px]`}>Color</h1>
-            <p className={`font-focus text-white text-[12px] flex-[1] min-w-[300px]`}>Natural dyes from ReColor are all derived from food wastes, reducing reliance on synthetic chemicals that can harm ecosystems. Unlike synthetic dyes, which often contain toxic substances, natural dyes are biodegradable and less likely to contribute to water pollution. Additionally, the use of natural dyes promotes sustainable agricultural practices, supporting biodiversity and reducing the carbon footprint associated with conventional dye production.</p>
+            <p className={`font-focus text-white text-[18px] flex-[1] min-w-[300px]`}>Natural dyes from ReColor are all derived from food wastes, reducing reliance on synthetic chemicals that can harm ecosystems. Unlike synthetic dyes, which often contain toxic substances, natural dyes are biodegradable and less likely to contribute to water pollution. Additionally, the use of natural dyes promotes sustainable agricultural practices, supporting biodiversity and reducing the carbon footprint associated with conventional dye production.</p>
         </div>
 
         <div className="flex flex-col md:flex-row items-center md:items-start justify-align gap-10 mb-16">

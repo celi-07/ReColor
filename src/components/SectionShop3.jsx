@@ -11,7 +11,7 @@ import InteractiveButton from '../elements/InteractiveButton'
 import { useNavigate } from "react-router-dom"
 import { DATA_PRODUCT } from '../constants/DATA_PRODUCT'
 
-const SectionShop3 = ({ width }) => {
+const SectionShop3 = ({ width, setShowItemAdded = () => {}  }) => {
   const navigate = useNavigate()
   
   const [isHoverLoadMore, setIsHoverLoadMore] = useState(false)
@@ -25,7 +25,7 @@ const SectionShop3 = ({ width }) => {
     <div className={`flex flex-col p-16 bg-blue`} id='usage'>
         <div className={`flex items-start justify-between gap-10 mb-5 flex-wrap`}>
             <h1 className={`font-maurenTrial text-white text-[30px]`}>Usage</h1>
-            <p className={`font-focus text-white text-[12px] flex-[1] min-w-[300px]`}>Natural dyes from ReColor are all derived from food wastes, reducing reliance on synthetic chemicals that can harm ecosystems. Unlike synthetic dyes, which often contain toxic substances, natural dyes are biodegradable and less likely to contribute to water pollution. Additionally, the use of natural dyes promotes sustainable agricultural practices, supporting biodiversity and reducing the carbon footprint associated with conventional dye production.</p>
+            <p className={`font-focus text-white text-[18px] flex-[1] min-w-[300px]`}>Natural dyes from ReColor are all derived from food wastes, reducing reliance on synthetic chemicals that can harm ecosystems. Unlike synthetic dyes, which often contain toxic substances, natural dyes are biodegradable and less likely to contribute to water pollution. Additionally, the use of natural dyes promotes sustainable agricultural practices, supporting biodiversity and reducing the carbon footprint associated with conventional dye production.</p>
         </div>
 
         <div className="flex flex-col md:flex-row items-center md:items-start justify-align gap-10 mb-16">
@@ -42,7 +42,7 @@ const SectionShop3 = ({ width }) => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4 text-center flex-grow">
             {DATA_PRODUCT.map((product, index) => (
-                <ProductCard key={index} product={product} textColor='text-blue' />
+                <ProductCard key={index} product={product} textColor='text-blue' setShowItemAdded={setShowItemAdded}/>
             ))}
             </div>
         </div>

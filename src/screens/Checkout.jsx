@@ -24,6 +24,7 @@ const CheckoutPage = ({ width }) => {
   const total = subtotal + shipping + insurance + voucher - (usePoints ? 23480 : 0)
 
   const audio = new Audio(ChaChing)
+  audio.volume = 0.5
 
   const handleCheckout = () => {
     setPopupStatus('loading')

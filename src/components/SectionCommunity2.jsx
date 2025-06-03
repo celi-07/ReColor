@@ -1,9 +1,41 @@
-import React from "react"
+import React, { useState } from "react"
 import Potato from "../assets/icon/ic_potato.svg"
 import CommunityDyes from '../assets/icon/ic_community_dyes.svg'
 import InteractiveButton from '../elements/InteractiveButton'
 
 const SectionCommunity2 = ({ width }) => {
+    // State to manage suggestion inputs
+    const [suggestionTitle, setSuggestionTitle] = useState("");
+    const [suggestionSubtitle, setSuggestionSubtitle] = useState("");
+    const [suggestionDescription, setSuggestionDescription] = useState("");
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [feedbackMessage, setFeedbackMessage] = useState("");
+
+    const handleSubmitSuggestion = () => {
+        if (suggestionTitle.trim() && suggestionSubtitle.trim() && suggestionDescription.trim()) {
+            console.log("Suggestion Submitted:", {
+                title: suggestionTitle,
+                subtitle: suggestionSubtitle,
+                description: suggestionDescription,
+            });
+            setIsSubmitted(true);
+            setFeedbackMessage("Thank you for your suggestion! It has been successfully submitted.");
+
+            // Clear inputs after submission
+            setSuggestionTitle("");
+            setSuggestionSubtitle("");
+            setSuggestionDescription("");
+
+            // Reset submission state and feedback message after a delay
+            setTimeout(() => {
+                setIsSubmitted(false);
+                setFeedbackMessage("");
+            }, 3000);
+        } else {
+            setFeedbackMessage("Please fill out all fields before submitting.");
+        }
+    };
+
     return (
         <div className='flex flex-col bg-lightPink py-10 px-5 md:px-16'>
             {/* Best Suggestions Section */}
@@ -21,28 +53,40 @@ const SectionCommunity2 = ({ width }) => {
                         <div className='flex flex-col gap-3'>
                             <input 
                                 type="text" 
-                                placeholder="Amazing dye" 
+                                placeholder="Enter your dye title (e.g., 'Ocean Blue')" 
+                                value={suggestionTitle}
+                                onChange={(e) => setSuggestionTitle(e.target.value)}
                                 className='w-full p-3 rounded-tl-2xl rounded-br-2xl border border-blue text-blue focus:outline-blue'
                             />
                             <input 
                                 type="text" 
-                                placeholder="Amazingness amazing" 
+                                placeholder="Enter a subtitle (e.g., 'Inspired by the sea')" 
+                                value={suggestionSubtitle}
+                                onChange={(e) => setSuggestionSubtitle(e.target.value)}
                                 className='w-full p-3 rounded-tl-2xl rounded-br-2xl border border-blue text-blue focus:outline-blue'
                             />
                             <textarea 
-                                placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla nunc ligula, at porta risus pulvinar non. Vivamus dignissim pharetra mattis. Integer dignissim congue neque in faucibus. Vivamus blandit sagittis." 
+                                placeholder="Describe your dye recipe and inspiration (e.g., 'This dye is made from blueberry skins and seaweed extract.')" 
+                                value={suggestionDescription}
+                                onChange={(e) => setSuggestionDescription(e.target.value)}
                                 className='w-full p-3 rounded-tl-2xl rounded-br-2xl border border-blue text-blue h-32 focus:outline-blue'
                             ></textarea>
                             
-                            <div className='mt-3 flex justify-start'>
+                            <div className='mt-3 flex flex-col'>
                                 <InteractiveButton 
-                                    text="Send your suggestions"
-                                    className="bg-blue"
+                                    text={isSubmitted ? "Suggestion Sent!" : "Send your suggestions"}
+                                    className={`bg-blue ${isSubmitted ? 'opacity-50 cursor-not-allowed' : ''}`}
                                     outlineColor="outline-blue"
                                     textStyle="text-sm"
                                     disableHover={true}
-                                    disabled={true}
+                                    disabled={isSubmitted}
+                                    handlePress={handleSubmitSuggestion}
                                 />
+                                {feedbackMessage && (
+                                    <p className={`mt-2 text-sm ${isSubmitted ? 'text-green-500' : 'text-red-500'}`}>
+                                        {feedbackMessage}
+                                    </p>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -65,7 +109,7 @@ const SectionCommunity2 = ({ width }) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default SectionCommunity2
