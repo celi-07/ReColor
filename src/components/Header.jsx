@@ -66,7 +66,7 @@ const Header = ({
             </h2>
             <p className=
               {`
-                font-focus text-[16px] text-turqoise py-[18px] text-justify
+                font-focus text-[18px] text-turqoise py-[18px] text-justify
                 ${width < 500 ? '!text-[12px]' : width < 900 ? 'w-[100%]' : width < 1150 ? 'w-[50%]' : 'w-[60%]'}
               `}
             >
@@ -78,7 +78,7 @@ const Header = ({
       </div>
 
       {width > 700 && (
-        <div className={`flex justify-between items-center -ml-[50px]`}>
+        <div className={`flex justify-between items-center -ml-[50px] text-[20px]`}>
           <Navbar 
             width={width}
             isHome={isHome}

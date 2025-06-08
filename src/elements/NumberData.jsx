@@ -18,7 +18,7 @@ const NumberData = ({
             />
             {title}
         </div>
-        <p className={`font-focus text-turqoise text-[16px] text-justify`}>{text}</p>
+        <p className={`font-focus text-turqoise text-[18px] text-justify`}>{text}</p>
     </div>
   )
 }

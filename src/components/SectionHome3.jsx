@@ -219,7 +219,7 @@ const SectionHome3 = ({ width, handleCheckout = () => {} }) => {
 
       <div className="flex flex-col items-center relative p-16">
         <h2 className={`font-maurenTrial text-turqoise text-[30px] ${width < 730 ? 'text-center' : 'text-left'}`}>our selection of natural dyes</h2>
-        <p className={`font-focus text-[16px] text-turqoise text-center ${width < 730 ? 'mb-0' : '-mb-16'}`}>
+        <p className={`font-focus text-[20px] text-turqoise text-center ${width < 730 ? 'mb-0' : '-mb-16'}`}>
           Explore our premium collection of natural dyes, sustainably sourced from plants, trees, and minerals. Each dye is carefully selected to provide vibrant, long-lasting color while being eco-friendly and non-toxic. Whether you're dyeing fabric, paper, or crafts, our natural dyes offer a unique and beautiful touch.
         </p>
 
@@ -230,12 +230,12 @@ const SectionHome3 = ({ width, handleCheckout = () => {} }) => {
           {/* Action Button  */}
           <div className='w-[300px]'>
             <h2 className="font-maurenTrial text-turqoise text-[28px] text-center">{arr[i].name}</h2>
-            <p className={`font-focus text-turqoise text-[16px] text-center pb-4`}>{arr[i].description}</p>
+            <p className={`font-focus text-turqoise text-[20px] text-center pb-4`}>{arr[i].description}</p>
             <div className="flex items-center justify-between w-full">
               <div onClick={handlePrev} className='h-full'>
                 <img src={ArrowDown} alt="Prev" className="w-4 h-4 rotate-90" />
               </div>
-              <p className={`font-focusItalic text-turqoise text-[16px] text-center`}>Price: {arr[i].price}</p>
+              <p className={`font-focusItalic text-turqoise text-[18px] text-center`}>Price: {arr[i].price}</p>
               <div onClick={handleNext} className='h-full'>
                 <img src={ArrowDown} alt="Next" className="w-4 h-4 -rotate-90" />
               </div>

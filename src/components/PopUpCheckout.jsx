@@ -1,13 +1,23 @@
-import { useContext } from "react"
-import { CheckoutContext } from "../context/CheckoutContext"
+import { useContext } from "react";
+import InteractiveButton from '../elements/InteractiveButton'
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { CheckoutContext } from "../context/CheckoutContext";
 
 const PopUpCheckout = ({ isOpen, onClose, status, paymentMethod }) => {
-    const { checkoutCount } = useContext(CheckoutContext)
+    const { checkoutCount } = useContext(CheckoutContext);
+    const navigate = useNavigate(); // Initialize useNavigate
 
-    if (!isOpen) return null
-    
-    const date = new Date()
-    const formattedDate = `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(2, '0')}/${String(date.getDate()).padStart(2, '0')}`
+    if (!isOpen) return null;
+
+    const date = new Date();
+    const formattedDate = `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(2, '0')}/${String(date.getDate()).padStart(2, '0')}`;
+
+    const handleContinueShopping = () => {
+        console.log("Redirecting to shop...");
+        navigate('/shop'); // Redirect to the shop page
+        console.log("Navigation triggered.");
+        // onClose(); // Close the popup
+    };
 
     return (
       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -42,12 +52,13 @@ const PopUpCheckout = ({ isOpen, onClose, status, paymentMethod }) => {
                   </div>
                 </div>
               </div>
-              <button 
-                onClick={onClose}
+              <InteractiveButton
+                handlePress={handleContinueShopping} // Use the handler
+                text="CONTINUE SHOPPING"
                 className="bg-turqoise hover:bg-teal-700 text-white py-3 px-6 rounded-md w-full transition"
-              >
-                CONTINUE SHOPPING
-              </button>
+                outlineColor="outline-teal-700"
+                textStyle="text-lg"
+              />
             </div>
           )}
         </div>
@@ -55,4 +66,4 @@ const PopUpCheckout = ({ isOpen, onClose, status, paymentMethod }) => {
     )
 }
 
-export default PopUpCheckout
+export default PopUpCheckout;

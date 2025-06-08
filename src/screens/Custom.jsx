@@ -91,9 +91,9 @@ const Custom = ({ width }) => {
       />
       <ScannerSection
         width={width}
-        baseColor="text-orange"
+        baseColor="text-black"
         hoverColor="text-white"
-        textColor='text-white'
+        textColor='text-black'
         bgColor='bg-orange'
         baseBgColor='bg-lightPink'
         hoverBgColor='bg-orange'
@@ -104,7 +104,7 @@ const Custom = ({ width }) => {
         handleCheckout={handleCheckout}
       />
 
-      <div className="bg-orange p-8 text-white relative">
+      <div className="bg-orange p-8 text-black relative">
         {/* Similar Suggestions Section */}
         <h2 className="text-xl mb-6 font-maurenTrial">SIMILAR SUGGESTIONS</h2>
         
